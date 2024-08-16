@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="jyap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-wE6k5L6HZyNf/hkYtO2YkCSf4nt7n0O3v6pFJt09D/7F4mJc5N5tBZW5J3t7aM5T" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="jywap.js" defer></script>
+    <style>
+        /* Custom Styles */
+        
+        .section {
+            padding: 40px 0;
+            background-color: #1a1b1c;
+            color: #fff;
+        }
+        
+        .section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        
+        .section .row {
+            margin: 0;
+        }
+        
+        .section img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .section hr {
+            border: none;
+            border-top: 2px solid #fff;
+            margin: 40px 0;
+        }
+        
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #000;
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .product-card .card-body {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .product-card .btn-buy {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 0;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+        
+        #loader {
+            height: 100%;
+            width: 100%;
+            background-color: #333;
+            position: fixed;
+            z-index: 10000;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+            transition: opacity 0.3s linear, visibility 0.3s linear;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .navbar.scrolled {
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader">
+        <h1>HI, THANK YOU FOR REACHING US</h1>
+        <h1>ENJOY PURCHASING</h1>
+        <h1>HAPPY SHOPPING</h1>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Tim's Brand</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownContact" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Contact
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownContact">
+                            <li><a class="dropdown-item" href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-phone"></i> Phone Number</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#stratocaster">Stratocaster</a></li>
+                            <li><a class="dropdown-item" href="#lespaul">Les Paul</a></li>
+                            <li><a class="dropdown-item" href="#telecaster">Telecaster</a></li>
+                            <li><a class="dropdown-item" href="#jazzmaster">Jazzmaster</a></li>
+                            <li><a class="dropdown-item" href="#jaguar">Jaguar</a></li>
+                            <li><a class="dropdown-item" href="#sg">SG</a></li>
+                            <li><a class="dropdown-item" href="#flyingv">Flying V</a></li>
+                            <li><a class="dropdown-item" href="#firebird">Firebird</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Slider main container -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="hello/sale.jpg" alt="Image 2">
+            </div>
+            <div class="swiper-slide">
+                <img src="hello/sale2.jpg" alt="Image 3">
+            </div>
+            <div class="swiper-slide">
+                <img src="hello/sale 3.jpg" alt="Image 7">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+    <!-- Stratocaster Section -->
+    <section id="stratocaster" class="section">
+        <div class="container">
+            <h2>Stratocaster</h2>
+            <hr>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/startocaster1.jpg" alt="Stratocaster 1">
+                        <div class="card-body">
+                            <h5>Stratocaster Model 1</h5>
+                            <p>$999.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/startocaster 2.jpg" alt="Stratocaster 2">
+                        <div class="card-body">
+                            <h5>Stratocaster Model 2</h5>
+                            <p>$1099.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/startocaster3.jpg" alt="Stratocaster 3">
+                        <div class="card-body">
+                            <h5>Stratocaster Model 3</h5>
+                            <p>$1199.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/startocaster 4.jpg" alt="Stratocaster 4">
+                        <div class="card-body">
+                            <h5>Stratocaster Model 4</h5>
+                            <p>$1299.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Les Paul Section -->
+    <section id="lespaul" class="section">
+        <div class="container">
+            <h2>Les Paul</h2>
+            <hr>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/lp1.jpg" alt="Les Paul 1">
+                        <div class="card-body">
+                            <h5>Les Paul Model 1</h5>
+                            <p>$1399.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/lp2.jpg" alt="Les Paul 2">
+                        <div class="card-body">
+                            <h5>Les Paul Model 2</h5>
+                            <p>$1499.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/lp3.jpg" alt="Les Paul 3">
+                        <div class="card-body">
+                            <h5>Les Paul Model 3</h5>
+                            <p>$1599.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/lp4.jpg" alt="Les Paul 4">
+                        <div class="card-body">
+                            <h5>Les Paul Model 4</h5>
+                            <p>$1699.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Telecaster Section -->
+    <section id="telecaster" class="section">
+        <div class="container">
+            <h2>Telecaster</h2>
+            <hr>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/tele1.jpg" alt="Telecaster 1">
+                        <div class="card-body">
+                            <h5>Telecaster Model 1</h5>
+                            <p>$899.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/tele2.jpg" alt="Telecaster 2">
+                        <div class="card-body">
+                            <h5>Telecaster Model 2</h5>
+                            <p>$999.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/tele3.jpg" alt="Telecaster 3">
+                        <div class="card-body">
+                            <h5>Telecaster Model 3</h5>
+                            <p>$1099.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/tele4.jpg" alt="Telecaster 4">
+                        <div class="card-body">
+                            <h5>Telecaster Model 4</h5>
+                            <p>$1199.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jazzmaster Section -->
+    <section id="jazzmaster" class="section">
+        <div class="container">
+            <h2>Jazzmaster</h2>
+            <hr>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/jazz1.jpg" alt="Jazzmaster 1">
+                        <div class="card-body">
+                            <h5>Jazzmaster Model 1</h5>
+                            <p>$1299.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/jazz2.jpg" alt="Jazzmaster 2">
+                        <div class="card-body">
+                            <h5>Jazzmaster Model 2</h5>
+                            <p>$1399.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/jazz3.jpg" alt="Jazzmaster 3">
+                        <div class="card-body">
+                            <h5>Jazzmaster Model 3</h5>
+                            <p>$1499.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/jazz4.jpg" alt="Jazzmaster 4">
+                        <div class="card-body">
+                            <h5>Jazzmaster Model 4</h5>
+                            <p>$1599.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jaguar Section -->
+    <section id="jaguar" class="section">
+        <div class="container">
+            <h2>Jaguar</h2>
+            <hr>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/jag1.jpg" alt="Jaguar 1">
+                        <div class="card-body">
+                            <h5>Jaguar Model 1</h5>
+                            <p>$1199.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/jag2.jpg" alt="Jaguar 2">
+                        <div class="card-body">
+                            <h5>Jaguar Model 2</h5>
+                            <p>$1299.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/jag3.jpg" alt="Jaguar 3">
+                        <div class="card-body">
+                            <h5>Jaguar Model 3</h5>
+                            <p>$1399.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/jag4.jpg" alt="Jaguar 4">
+                        <div class="card-body">
+                            <h5>Jaguar Model 4</h5>
+                            <p>$1499.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SG Section -->
+    <section id="sg" class="section">
+        <div class="container">
+            <h2>SG</h2>
+            <hr>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/sg1.jpg" alt="SG 1">
+                        <div class="card-body">
+                            <h5>SG Model 1</h5>
+                            <p>$1199.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/sg2.jpg" alt="SG 2">
+                        <div class="card-body">
+                            <h5>SG Model 2</h5>
+                            <p>$1299.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/sg3.jpg" alt="SG 3">
+                        <div class="card-body">
+                            <h5>SG Model 3</h5>
+                            <p>$1399.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/sg4.jpg" alt="SG 4">
+                        <div class="card-body">
+                            <h5>SG Model 4</h5>
+                            <p>$1499.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flying V Section -->
+    <section id="flyingv" class="section">
+        <div class="container">
+            <h2>Flying V</h2>
+            <hr>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/flyingv2.jpg" alt="Flying V 1">
+                        <div class="card-body">
+                            <h5>Flying V Model 1</h5>
+                            <p>$1499.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/flyingv2.jpg" alt="Flying V 2">
+                        <div class="card-body">
+                            <h5>Flying V Model 2</h5>
+                            <p>$1599.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/flyingv3.jpg" alt="Flying V 3">
+                        <div class="card-body">
+                            <h5>Flying V Model 3</h5>
+                            <p>$1699.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/flyingv4.jpg" alt="Flying V 4">
+                        <div class="card-body">
+                            <h5>Flying V Model 4</h5>
+                            <p>$1799.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Firebird Section -->
+    <section id="firebird" class="section">
+        <div class="container">
+            <h2>Firebird</h2>
+            <hr>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/firebird2.jpg" alt="Firebird 1">
+                        <div class="card-body">
+                            <h5>Firebird Model 1</h5>
+                            <p>$1299.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/firebird2.jpg" alt="Firebird 2">
+                        <div class="card-body">
+                            <h5>Firebird Model 2</h5>
+                            <p>$1399.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/firebird3.jpg" alt="Firebird 3">
+                        <div class="card-body">
+                            <h5>Firebird Model 3</h5>
+                            <p>$1499.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="product-card">
+                        <img src="hello/firebird4.jpg" alt="Firebird 4">
+                        <div class="card-body">
+                            <h5>Firebird Model 4</h5>
+                            <p>$1599.99</p>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Brand</a>
+            <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#product">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Tim's Brand. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+            }, 3000); // Adjust this time as needed
+
+            const swiper = new Swiper('.swiper', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: true,
+                autoplay: {
+                    delay: 3000, // Delay between slides in ms
+                    disableOnInteraction: false, // Continue autoplay after user interactions
+                },
+                // If you want pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true, // Allows clicking on pagination bullets
+                },
+                // If you want navigation
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                // If you want scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                    draggable: true, // Allows dragging the scrollbar
+                },
+            });
+
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggler = document.querySelector('.navbar-toggler');
+            const menu = document.querySelector('.navbar-collapse');
+
+            toggler.addEventListener('click', function() {
+                menu.classList.toggle('show');
+            });
+        });
+    </script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+
+</body>
+
+</html>
